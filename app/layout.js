@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Titulo from "./Clase1/Titulo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Curso de Next JS - Coderhouse",
-  description: "Aprenderemos a crear páginas y/o aplicaciones basadas en JavaScript con Next.JS!",
+  title: "Chevrolet Sitio Oficial | Autos, Camionetas, 4X4, Pick Up, SUV, y Autos Familiares",
+  description: "En el sitio oficial Chevrolet podés encontrar todos los modelos de: Autos, Camionetas, 4X4, Pick Ups y muchos más. Descubrí el modelo de tus sueños.",
+  keywords: ["chevrolet", "chevrolet argentina", "chevrolet autos", "chevrolet suv", "chevrolet pickups"]
 };
 
 export default function RootLayout({ children }) {
@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Titulo />
         {children}
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
       </body>
