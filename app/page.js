@@ -1,20 +1,14 @@
-"use client"
+import ProductCard from "./components/ProductCard"
+import productos from "./data/productos.json"
 
-import Boton from "./components/Boton";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-
-export default function Home() {
-  const saludar = () => {
-    alert("hola")
-  }
+export default async function Home() {
   return (
-    <>
-      <Navbar />
-      <Boton title={"Esto es un Botón"} onClick={saludar}>
-        Solicitar Test Drive
-      </Boton>
-      <Footer />
-    </>
-  );
+    <section className="container flex flex-row m-auto my-20">
+      {
+          productos.map(item => (
+              <ProductCard key={item.slug} item={item} />
+          ))
+      }
+    </section>
+  )
 }

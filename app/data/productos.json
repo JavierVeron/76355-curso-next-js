@@ -1,0 +1,56 @@
+[
+    {
+        "slug":1,
+        "titulo":"Onix",
+        "titulo2":"Un auto de otra categoría en la misma de siempre",
+        "descripcion":"El Onix suma equipamiento de otras categorías para mejorar tu experiencia de manejo. Ahora vas a poder disfrutar de sus soluciones innovadoras y el motor turbo, preparado para superar las expectativas de los más exigentes.",
+        "precio":24700000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/cars/2020-onix-premier/colorizer/02-images/summit-white.jpg?imwidth=1200",
+        "categoria":"autos"
+    },
+    {
+        "slug":2,
+        "titulo":"Onix Plus",
+        "titulo2":"El Chevrolet Onix Plus no vino a inventar nada. Vino a cambiarlo todo",
+        "descripcion":"El Onix Plus está diseñado para ofrecerte más de lo que esperás. Contá con soluciones innovadoras que integran el auto con tu rutina, además de un motor turbo para ayudar a que la vida fluya sin prisa, pero sin pausas.",
+        "precio":25700000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/cars/2020-onix-plus-premier/01-images/colorizer/julio-23/1-switchblade-silver-met.png?imwidth=1200",
+        "categoria":"autos"
+    },
+    {
+        "slug":3,
+        "titulo":"Spin 2025",
+        "titulo2":"Bienvenidos al Bigmalismo",
+        "descripcion":"En una <b>Chevrolet Spin</b>, todo es Big: espacio, seguridad y tecnología, exactamente como a vos y a tu familia les gustan. En este auto de 7 lugares, llevás todo con confort y versatilidad, además de contar con lo mejor en conectividad y con la mejor relación calidad-precio de la categoría. Y bueno, si estos no son motivos suficientes para que te dejes llevar por la <b>nueva Spin</b>, esperá y confiá: ¡es hora de explorar el <b>Bigmalismo</b>!",
+        "precio":28400000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/cars/2021-spin/mov/refresh/colorizer/img/3-4-frente-spin-some-kinda-blue.png?imwidth=1200",
+        "categoria":"suvs"
+    },
+    {
+        "slug":4,
+        "titulo":"Tracker",
+        "titulo2":"¡Una experiencia única!",
+        "descripcion":"Agendá tu test drive y descubrí vos mismo la magia de Chevrolet Tracker.",
+        "precio":28700000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/crossover-and-suvs/2021-tracker/colorizer/tracker-lt-rush-met.png?imwidth=1200",
+        "categoria":"suvs"
+    },
+    {
+        "slug":5,
+        "titulo":"S10 2025",
+        "titulo2":"TU PICK UP CHEVROLET: BRUTAL COMO LOS RETOS DEL DÍA A DÍA, VERSÁTIL COMO VOS",
+        "descripcion":"La nueva pick up <b>Chevrolet S10</b> llega brutalmente más fuerte y potente, con un motor turbo diésel más eficiente de 207 CV y torque de 510 Nm. Además, cuenta con todo lo que necesitás para que tus viajes en familia sean más confortables y para los más variados retos del día a día, ofreciéndote desde un interior con acabados premium, encendido de motor remoto, una nueva central multimedia MyLink con pantalla de 11” y una línea de accesorios exclusivos Chevrolet.",
+        "precio":39400000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/pickups-and-trucks/2021-s10-cd-hc/01-images/refresh-nov-24/colorizer/s10-hc-2025-2000x2000-gris-aegean.png?imwidth=1200",
+        "categoria":"pick-ups"
+    },
+    {
+        "slug":6,
+        "titulo":"Silverado 2025",
+        "titulo2":"UNA PICK UP PARA QUIENES PIENSAN (MUY) EN GRANDE",
+        "descripcion":"Estás en la cima, y la <b>Chevrolet Silverado 2025</b> es tu recompensa. Capacidad, sofisticación y tecnología se combinan en esta pick up, disponible en las exclusivas versiones <b>High Country</b> y <b>Z71</b>.",
+        "precio":96300000,
+        "imagen":"https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/pickups-and-trucks/2024-silverado/refresh-mayo-2025/2-colorizer/hc/hc-summit-white.png?imwidth=1200",
+        "categoria":"pick-ups"
+    }
+]
