@@ -1,3 +1,5 @@
+"use client"
+
 import Boton from "./components/Boton";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -9,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Boton title={"Esto es un Botón"}>
+      <Boton title={"Esto es un Botón"} onClick={saludar}>
         Solicitar Test Drive
       </Boton>
       <Footer />
