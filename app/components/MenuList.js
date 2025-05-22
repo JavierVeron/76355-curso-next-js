@@ -7,10 +7,12 @@ const MenuList = ({open, handleClose}) => {
                 <div className="text-white p-5" onClick={handleClose}>[ X ]</div>
                 <nav className="flex flex-col py-5">
                     <Link href={"/nosotros"} className="text-white p-5">Nosotros</Link>
-                    <Link href={"/productos"} className="text-white p-5">Productos</Link>
+                    <Link href={"/productos/all"} className="text-white p-5">Productos</Link>
                     <Link href={"/productos/autos"} className="text-white p-5">Autos</Link>
                     <Link href={"/productos/suvs"} className="text-white p-5">Suvs</Link>
                     <Link href={"/productos/pick-ups"} className="text-white p-5">Pick-Ups</Link>
+                    <Link href={"/carrito"} className="text-white p-5">Carrito</Link>
+                    <Link href={"/admin"} className="text-white p-5">Administrador</Link>
                 </nav>
             </aside>
         </div>
