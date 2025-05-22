@@ -13,6 +13,7 @@ const MenuList = ({open, handleClose}) => {
                     <Link href={"/productos/pick-ups"} className="text-white p-5">Pick-Ups</Link>
                     <Link href={"/carrito"} className="text-white p-5">Carrito</Link>
                     <Link href={"/admin"} className="text-white p-5">Administrador</Link>
+                    <Link href={"/contacto"} className="text-white p-5">Contacto</Link>
                 </nav>
             </aside>
         </div>
