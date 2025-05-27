@@ -1,19 +1,26 @@
-import mockData from "@/app/data/productos.json"
-import { NextResponse } from "next/server";
-
-const sleep = (timer) => {
-    return new Promise((res) => setTimeout(res, timer));
-}
+import { NextResponse } from "next/server"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "@/app/firebase/config"
 
 export async function GET(response, {params}) {
     const {categoria} = await params;  
-    let items = categoria == "all" ? mockData : mockData.filter(item => item.categoria == categoria);
-
-    if (items.length == 0) {
-        items = "No se encontraron productos!";
+    const productosCollection = collection(db, "productos");
+    
+    // Insertar los productos en Firestore
+    /* for (const item of items) {
+        await addDoc(productosCollection, item);
     }
 
-    await sleep(2000);
+    console.log("Productos cargados!"); */
+
+    // Filtrar productos en Firestore por Categoría
+    const q = categoria == "all" ? productosCollection : query(productosCollection, where("categoria", "==", categoria));
+    const querySnapshot = await getDocs(q);
+    let items = querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
+
+    if (querySnapshot.size == 0) {
+        items = "No se encontraron productos!";
+    }
     
     return NextResponse.json(items);
 }

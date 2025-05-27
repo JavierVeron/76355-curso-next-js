@@ -10,7 +10,7 @@ const ProductList = async ({categoria}) => {
         <section className="container flex flex-row m-auto my-20">
             {
                 items.map(item => (
-                    <ProductCard key={item.slug} item={item} />
+                    <ProductCard key={item.id} item={item} />
                 ))
             }
         </section>
