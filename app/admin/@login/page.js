@@ -2,7 +2,6 @@
 
 import Boton from "@/app/components/Boton"
 import { AuthContext } from "@/app/context/AuthContext";
-import Link from "next/link";
 import { useContext, useState } from "react"
 
 const LoginPage = () => {
@@ -10,7 +9,7 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [registrar, setRegistrar] = useState(false);
-    const {user, logInUser, logOutUser, createUser} = useContext(AuthContext);
+    const {user, logInUser, logOutUser, createUser, googleLogin} = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,13 +34,15 @@ const LoginPage = () => {
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
                     <input type="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ingrese su Contraseña" required value={password} onInput={(e) => {setPassword(e.target.value)}} />
                 </div>
-                <Boton type="submit">{registrar ? "Registrar Usuario" : "Iniciar Sesión"}</Boton>
-                <div className="mb-5">
+                <div className="mb-1">
+                    <Boton type="submit">{registrar ? "Registrar Usuario" : "Iniciar Sesión"}</Boton>
+                </div>
+                <div className="mb-1">
                     <Boton onClick={registrarme}>Registrarme</Boton>
                 </div>
-                {user.logged && <div className="mb-5">
-                    <Boton onClick={logOutUser}>Cerrar Sesión</Boton>
-                </div>}
+                <div className="mb-1">
+                    <Boton onClick={googleLogin}>Registrarme con Google</Boton>
+                </div>
             </form>
             {error ? <div className="p-4 my-5 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 text-center" role="alert"><span className="font-medium">Error!</span> {error}</div> : ""}
         </div>
