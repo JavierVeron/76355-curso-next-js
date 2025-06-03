@@ -11,7 +11,7 @@ const Carrito = () => {
 
     if (totalItems() == 0) {
         return (
-            <div className="container m-auto my-20">
+            <div className="container m-auto text-center my-20">
                 <h1 className="text-3xl font-black">El Carrito está vacío!</h1>
                 <Boton title={"Volver atrás"} onClick={() => {router.back()}}>Volver atrás</Boton>
             </div>

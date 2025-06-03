@@ -44,16 +44,16 @@ const CartContextProvider = ({children}) => {
         return cart.reduce((acum, item) => acum += item.precio * item.cantidad, 0);
     }
 
-    const generateOrder = (nombre, email, telefono) => {
+    const generateOrder = async (nombre, email, telefono) => {
         const buyer = {nombre, email, telefono};
-        const items = cart.map(item => ({id:item.slug, nombre:item.nombre, precio:item.precio, cantidad:item.cantidad}));
+        const items = cart.map(item => ({id:item.slug, nombre:item.titulo, precio:item.precio, cantidad:item.cantidad}));
         const fecha = new Date();
         const fechaActual = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
-        const order = {buyer:buyer, items:items, date:fechaActual, total:totalItems()};
+        const order = {buyer:buyer, items:items, date:fechaActual, total:sumItems()};
         const pedidosCollection = collection(db, "pedidos");
-        addDoc(pedidosCollection, order).then(resultado => {
-            return resultado.id;
-        })
+        const result = await addDoc(pedidosCollection, order);
+
+        return result.id;
     }
 
     return <CartContext.Provider value={{cart, addItem, deleteItem, clearCart, totalItems, sumItems, generateOrder}}>

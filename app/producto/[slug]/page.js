@@ -8,7 +8,8 @@ export async function generateMetadata({params, searchParams}, parent) {
     const item = await response.json();
 
     return {
-        title:`${item.titulo} | Chevrolet Sitio Oficial`
+        title:`${item.titulo} | Chevrolet Sitio Oficial`,
+        description: `${item.titulo2} - ${item.descripcion}`
     }
 }
 

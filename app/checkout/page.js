@@ -6,15 +6,26 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Checkout = () => {
-    const {cart, totalItems, sumItems, generateOrder} = useContext(CartContext);
+    const {cart, clearCart, totalItems, sumItems, generateOrder} = useContext(CartContext);
     const router = useRouter();
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
+    const [orderId, setOrderId] = useState("");
+
+    if (orderId) {
+        return (
+            <div className="container m-auto text-center my-20">
+                <h1 className="text-3xl font-black">Gracias por tu Compra!</h1>
+                <h3 className="text-2xl">Tu ID de Compra es: <b>{orderId}</b></h3>
+                <Boton title={"Ir a la Página Principal"} onClick={() => {router.replace("/")}}>Ir a la Página Principal</Boton>
+            </div>
+        )
+    }
 
     if (totalItems() == 0) {
         return (
-            <div className="container m-auto my-20">
+            <div className="container m-auto text-center my-20">
                 <h1 className="text-3xl font-black">El Carrito está vacío!</h1>
                 <Boton title={"Volver atrás"} onClick={() => {router.back()}}>Volver atrás</Boton>
             </div>
@@ -23,12 +34,13 @@ const Checkout = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let orderId = await generateOrder(nombre, email, telefono);
+        setOrderId(await generateOrder(nombre, email, telefono));
+        clearCart();
         console.log("Se creó el Carrito con el Id #" + orderId);
     }
 
     return (
-        <div className="container m-auto flex flex-col my-20">
+        <div className="container m-auto flex flex-row justify-center my-20">
             <div>
                 <form className="max-w-sm mx-auto" onSubmit={handleSubmit} method="post" >
                     <h1 className="text-3xl font-black mb-5">Generar Orden</h1>

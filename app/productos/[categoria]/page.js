@@ -6,7 +6,8 @@ export async function generateMetadata({params, searchParams}, parent) {
     categoria = categoria == "all" ? "Productos" : categoria;
 
     return {
-        title:`${categoria} | Chevrolet Sitio Oficial`
+        title:`${categoria} | Chevrolet Sitio Oficial`,
+        description: `Querés saber más acerca de nuestros ${categoria}? Enterate más!`
     }
 }
 
