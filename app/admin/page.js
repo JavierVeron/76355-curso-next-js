@@ -1,4 +1,5 @@
-import Boton from "@/app/components/Boton";
+import Boton from "@/app/components/Boton"
+import Link from "next/link";
 
 const ListPage = async () => {
     const response = await fetch("http://localhost:3000/api/productos/all");
@@ -8,6 +9,9 @@ const ListPage = async () => {
         <div className="container m-auto flex flex-col my-20">
             <table>
                 <tbody>
+                    <tr>
+                        <td colSpan={6} className="px-6 py-4 text-end"><Link href={"/admin/create"} >Agregar</Link></td>
+                    </tr>
                     {
                         items.map(item => (
                             <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">

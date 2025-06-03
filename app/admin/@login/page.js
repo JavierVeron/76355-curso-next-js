@@ -9,7 +9,7 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [registrar, setRegistrar] = useState(false);
-    const {user, logInUser, logOutUser, createUser, googleLogin} = useContext(AuthContext);
+    const {user, logInUser, createUser, googleLogin} = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,9 +37,9 @@ const LoginPage = () => {
                 <div className="mb-1">
                     <Boton type="submit">{registrar ? "Registrar Usuario" : "Iniciar Sesión"}</Boton>
                 </div>
-                <div className="mb-1">
+                {!registrar && <div className="mb-1">
                     <Boton onClick={registrarme}>Registrarme</Boton>
-                </div>
+                </div>}
                 <div className="mb-1">
                     <Boton onClick={googleLogin}>Registrarme con Google</Boton>
                 </div>

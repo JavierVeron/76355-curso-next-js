@@ -17,7 +17,6 @@ const CreateProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const product = {titulo, titulo2, descripcion, precio, imagen, categoria};
-        console.log(product);
         const productosRef = collection(db, "productos");
         const fileName = imagen.split("\\").pop();
         const storageRef = ref(storage, fileName);       
@@ -30,7 +29,7 @@ const CreateProduct = () => {
 
     return (
         <div className="container m-auto flex flex-col my-20">
-            <form className="max-w-sm mx-auto" onSubmit={handleSubmit} method="post">
+            <form className="max-w-sm mx-auto" onSubmit={handleSubmit} method="post" >
                 <h1 className="text-3xl font-black mb-5">Cargar Producto</h1>
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Título</label>

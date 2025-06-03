@@ -1,11 +1,19 @@
 "use client"
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Boton from "./Boton";
 import { CartContext } from "../context/CartContext";
+import { useRouter } from "next/navigation";
 
 const ProductDetail = ({item}) => {
     const {addItem} = useContext(CartContext);
+    const [visible, setVisible] = useState(true);
+    const router = useRouter();
+
+    const agregarAlCarrito = (id) => {
+        addItem(id);
+        setVisible(false);
+    }
 
     return (
         <div className="container m-auto flex flex-row my-20">
@@ -17,7 +25,7 @@ const ProductDetail = ({item}) => {
                 <h2 className="text-2xl">{item.titulo2}</h2>
                 <p>{item.descripcion}</p>
                 <p className="font-black">${item.precio}</p>
-                <Boton onClick={() => {addItem(item.id)}} title="Agregar al Carrito">Agregar Al Carrito</Boton>
+                {visible ? <Boton onClick={() => {agregarAlCarrito(item.id)}} title="Agregar al Carrito">Agregar Al Carrito</Boton> : <Boton onClick={() => {router.replace("/carrito")}} title="Terminar mi Compra">Terminar mi Compra</Boton>} 
             </div>
 
         </div>

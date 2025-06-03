@@ -20,6 +20,7 @@ const Carrito = () => {
 
     return (
         <div className="container m-auto flex flex-col my-20">
+            <h1 className="text-3xl font-black mb-5">Carrito de Compras</h1>
             <table>
                 <tbody>
                     <tr>
@@ -40,7 +41,7 @@ const Carrito = () => {
                     <tr>
                         <td colSpan={4} className="px-6 py-4"><b>Total a Pagar</b></td>
                         <td className="px-6 py-4"><b>${sumItems()}</b></td>
-                        <td className="px-6 py-4">&nbsp;</td>
+                        <td className="px-6 py-4 text-end"><Boton onClick={() => {router.replace("/checkout")}}>Checkout</Boton></td>
                     </tr>
             </tbody>
             </table>

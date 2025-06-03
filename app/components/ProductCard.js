@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import Boton from "./Boton"
-import Link from "next/link";
+import Link from "next/link"
 
 const ProductCard = ({item}) => {
     const router = useRouter();

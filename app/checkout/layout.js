@@ -12,12 +12,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Carrito | Chevrolet Sitio Oficial",
-  description: "Carrito. En el sitio oficial Chevrolet podés encontrar todos los modelos de Autos.",
+  title: "Checkout | Chevrolet Sitio Oficial",
+  description: "Checkout. En el sitio oficial Chevrolet podés encontrar todos los modelos de Autos.",
   keywords: ["chevrolet", "chevrolet argentina", "chevrolet autos", "chevrolet suv", "chevrolet pickups"]
 };
 
-export default function CarritoLayout({ children }) {
+export default function CheckoutLayout({ children }) {
   return (
     <>
       {children}
